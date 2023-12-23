@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { AlertCircle, BanIcon, Book, CheckCheck, Info } from "lucide-react";
+import "./App.css";
+import Alert from "./components/ui/Alert/index";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <h1> YOU DON'T KNOW REACTJS</h1>
+      <Alert
+        type={"default"}
+        icon={<Book size={20} />}
+        title="this is the default message!"
+        description="Hello World!"
+      >
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus iure
+        quidem, <a href="/">"ipsam"</a>
+        sequi explicabo officia quaerat iste aperiam mollitia tenetur.
+      </Alert>
+      <Alert
+        type={"error"}
+        icon={<BanIcon size={20} />}
+        title="Something Went Wrong"
+        description="Hello World!"
+      />
+      <Alert
+        type={"info"}
+        icon={<Info size={20} />}
+        title="Some information"
+        description="Hello World!"
+      />
+      <Alert
+        type={"warning"}
+        icon={<AlertCircle size={20} />}
+        title="Something giving you warning"
+        description="Hello World!"
+      />
+      <Alert
+        type={"success"}
+        icon={<CheckCheck size={20} />}
+        title="Something giving you success"
+        description="Hello World!"
+      />
+    </div>
+  );
 }
 
-export default App
+export default App;
